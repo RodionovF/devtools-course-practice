@@ -4,9 +4,9 @@
 
 #include <string>
 
-#include "hypothec_calculator.h"
+#include "include/hypothec_calculator.h"
 
-TEST_F(HypothecCalculator, Can_set_day_and_check_return_day) {
+TEST(HypothecCalculator, Can_set_day_and_check_return_day) {
     // Arrange
     HypothecCalculator H;
     date data;
@@ -21,7 +21,7 @@ TEST_F(HypothecCalculator, Can_set_day_and_check_return_day) {
     EXPECT_EQ(H.return_final_date_of_payment().day, (data.day + 180) % 30 );
 }
 
-TEST_F(HypothecCalculator, Can_set_month_and_check_return_month) {
+TEST(HypothecCalculator, Can_set_month_and_check_return_month) {
     // Arrange
     HypothecCalculator H;
     date data;
@@ -36,7 +36,7 @@ TEST_F(HypothecCalculator, Can_set_month_and_check_return_month) {
     EXPECT_EQ(H.return_final_date_of_payment().month, (data.month + 6) % 12 - 1);
 }
 
-TEST_F(HypothecCalculator, Can_set_year_and_check_return_year) {
+TEST(HypothecCalculator, Can_set_year_and_check_return_year) {
     // Arrange
     HypothecCalculator H;
     date data;
@@ -51,7 +51,7 @@ TEST_F(HypothecCalculator, Can_set_year_and_check_return_year) {
     EXPECT_EQ(H.return_final_date_of_payment().year, 2019);
 }
 
-TEST_F(HypothecCalculator, Can_true_count_differentiated_payment_type) {
+TEST(HypothecCalculator, Can_true_count_differentiated_payment_type) {
     // Arrange
     HypothecCalculator H;
 
@@ -62,7 +62,7 @@ TEST_F(HypothecCalculator, Can_true_count_differentiated_payment_type) {
     EXPECT_EQ(H.return_final_amount_of_payment(), 1029.17);
 }
 
-TEST_F(HypothecCalculator, Can_true_count_annuity_payment_type) {
+TEST(HypothecCalculator, Can_true_count_annuity_payment_type) {
     // Arrange
     HypothecCalculator H;
 
@@ -73,7 +73,7 @@ TEST_F(HypothecCalculator, Can_true_count_annuity_payment_type) {
     EXPECT_EQ(H.return_final_amount_of_payment(), 1029.37);
 }
 
-TEST_F(HypothecCalculator, Cannt_set_minus_value_to_monthly_commissions) {
+TEST(HypothecCalculator, Cannt_set_minus_value_to_monthly_commissions) {
     // Arrange
     float value = -10;
     HypothecCalculator H;
@@ -82,7 +82,7 @@ TEST_F(HypothecCalculator, Cannt_set_minus_value_to_monthly_commissions) {
     ASSERT_ANY_THROW(H.set_monthly_commissions(value));
 }
 
-TEST_F(HypothecCalculator, Cannt_set_minus_value_to_first_commissions) {
+TEST(HypothecCalculator, Cannt_set_minus_value_to_first_commissions) {
     // Arrange
     float value = -10;
     HypothecCalculator H;
@@ -91,7 +91,7 @@ TEST_F(HypothecCalculator, Cannt_set_minus_value_to_first_commissions) {
     ASSERT_ANY_THROW(H.set_first_commissions(value));
 }
 
-TEST_F(HypothecCalculator, Cannt_create_object_with_minus_value) {
+TEST(HypothecCalculator, Cannt_create_object_with_minus_value) {
     // Arrange
     float value1 = -10;
     float value2 = -15;
@@ -102,7 +102,7 @@ TEST_F(HypothecCalculator, Cannt_create_object_with_minus_value) {
     ASSERT_ANY_THROW(HypothecCalculator H(value1, value2, value4, value3);
 }
 
-TEST_F(HypothecCalculator, Cannt_set_last year) {
+TEST(HypothecCalculator, Cannt_set_last year) {
     // Arrange
     HypothecCalculator H;
     date data;

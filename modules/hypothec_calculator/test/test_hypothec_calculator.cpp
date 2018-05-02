@@ -33,7 +33,7 @@ TEST(HypothecCalculator, Can_set_month_and_check_return_month) {
     H.set_date_of_payment(data);
 
     // Assert
-    EXPECT_EQ(H.return_final_date_of_payment().month, 2);
+    EXPECT_EQ(H.return_final_date_of_payment().month, 3);
 }
 
 TEST(HypothecCalculator, Can_set_year_and_check_return_year) {

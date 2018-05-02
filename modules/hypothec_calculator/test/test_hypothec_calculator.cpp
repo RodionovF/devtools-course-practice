@@ -60,7 +60,7 @@ TEST(HypothecCalculator, Can_true_count_differentiated_payment_type) {
     H.set_payment_type(1);
 
     // Assert
-    EXPECT_EQ(H.return_final_amount_of_payment(), 1029.17);
+    EXPECT_NEAR(H.return_final_amount_of_payment(), key, 0.01);
 }
 
 TEST(HypothecCalculator, Can_true_count_annuity_payment_type) {
@@ -72,7 +72,7 @@ TEST(HypothecCalculator, Can_true_count_annuity_payment_type) {
     H.set_payment_type(2);
 
     // Assert
-    EXPECT_EQ(H.return_final_amount_of_payment(), key);
+    EXPECT_NEAR(H.return_final_amount_of_payment(), key, 0.01);
 }
 
 TEST(HypothecCalculator, Cannt_set_minus_value_to_monthly_commissions) {

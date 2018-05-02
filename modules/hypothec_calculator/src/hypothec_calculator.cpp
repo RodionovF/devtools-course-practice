@@ -95,7 +95,7 @@ float HypothecCalculator::return_final_amount_of_payment(){
         int i = 0;
         float P = 1 + interest_rate_in_month / 1200;
         float resultP = P;
-        while (i < credit_term_in_month - 1)ˆ{
+        while (i < credit_term_in_month - 1){
             resultP *= P;
             i++;
         }

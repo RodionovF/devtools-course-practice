@@ -23,7 +23,7 @@ class HypothecCalculator {
 
  public:
     HypothecCalculator();
-    HypothecCalculator(float app_costs, float initial_fee, int term, float rate);
+    HypothecCalculator(float costs, float fee, int term, float rate);
     void set_first_commissions(float _first_commissions);
     void set_monthly_commissions(float _monthly_commissions);
     void set_payment_type(int type);

@@ -54,6 +54,7 @@ TEST(HypothecCalculator, Can_set_year_and_check_return_year) {
 TEST(HypothecCalculator, Can_true_count_differentiated_payment_type) {
     // Arrange
     HypothecCalculator H;
+    float key = 1029.17;
 
     // Act
     H.set_payment_type(1);
@@ -65,12 +66,13 @@ TEST(HypothecCalculator, Can_true_count_differentiated_payment_type) {
 TEST(HypothecCalculator, Can_true_count_annuity_payment_type) {
     // Arrange
     HypothecCalculator H;
+    float key = 1029.37;
 
     // Act
     H.set_payment_type(2);
 
     // Assert
-    EXPECT_EQ(H.return_final_amount_of_payment(), 1029.37);
+    EXPECT_EQ(H.return_final_amount_of_payment(), key);
 }
 
 TEST(HypothecCalculator, Cannt_set_minus_value_to_monthly_commissions) {
@@ -110,7 +112,7 @@ TEST(HypothecCalculator, Cannt_set_last_year) {
     // Act
     data.day = 9;
     data.month = 10;
-    data.year = 2018;
+    data.year = 2017;
 
     //=Assert
     ASSERT_ANY_THROW(H.set_date_of_payment(data));

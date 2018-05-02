@@ -67,6 +67,7 @@ void HypothecCalculator::set_payment_type(int type)
 
 void HypothecCalculator::set_date_of_payment(date _start_of_payments)
 {
+    if ((_start_of_payments.year < start_of_payments.year)) throw std::string("Can't return back to the future");
     start_of_payments.day = _start_of_payments.day;
     start_of_payments.month = _start_of_payments.month;
     start_of_payments.year = _start_of_payments.year;
@@ -90,7 +91,7 @@ float HypothecCalculator::return_final_amount_of_payment()
             loan_debt -= debt_per_month_main;
             debt_per_month_extra_sum += debt_per_month_extra;
         }
-        return debt_per_month_extra_sum / 1000000;
+        return debt_per_month_extra_sum;
     }
 
     else

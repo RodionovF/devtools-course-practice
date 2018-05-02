@@ -1,5 +1,8 @@
 // Copyright 2018 Rodionov Fedor
 
+#ifndef MODULES_HYPOTHEC_CALCULATOR_INCLUDE_HYPOTHEC_CALCULATOR_H_
+#define MODULES_HYPOTHEC_CALCULATOR_INCLUDE_HYPOTHEC_CALCULATOR_H_
+
 struct date {
     int day;
     int month;
@@ -16,13 +19,11 @@ class HypothecCalculator {
     bool differentiated_payment_type;
     bool annuity_payment_type;
     date start_of_payments;
-
     date final_date_of_payment;
-    float final_amount_of_payment;
 
  public:
     HypothecCalculator();
-    HypothecCalculator(float _app_costs, float _an_initial_fee, int term_in_month, float rate_in_month);
+    HypothecCalculator(float app_costs, float initial_fee, int term, float rate);
     void set_first_commissions(float _first_commissions);
     void set_monthly_commissions(float _monthly_commissions);
     void set_payment_type(int type);
@@ -30,3 +31,5 @@ class HypothecCalculator {
     float return_final_amount_of_payment();
     date return_final_date_of_payment();
 };
+
+#endif  // MODULES_HYPOTHEC_CALCULATOR_INCLUDE_HYPOTHEC_CALCULATOR_H_

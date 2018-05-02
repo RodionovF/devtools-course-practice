@@ -1,13 +1,12 @@
-#pragma once// Copyright 2018 Rodionov Fedor
+// Copyright 2018 Rodionov Fedor
 
-struct date
-{
+struct date {
     int day;
     int month;
     int year;
 };
 class HypothecCalculator {
-private:
+ private:
     float apartments_cost;
     float an_initial_fee;
     int credit_term_in_month;
@@ -21,9 +20,9 @@ private:
     date final_date_of_payment;
     float final_amount_of_payment;
 
-public:
+ public:
     HypothecCalculator();
-    HypothecCalculator(float _app_costs, float _an_initial_fee, int _credit_term_in_month, float _interest_rate_in_month);
+    HypothecCalculator(float _app_costs, float _an_initial_fee, int term_in_month, float rate_in_month);
     void set_first_commissions(float _first_commissions);
     void set_monthly_commissions(float _monthly_commissions);
     void set_payment_type(int type);

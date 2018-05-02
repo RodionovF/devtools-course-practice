@@ -1,4 +1,4 @@
-#pragma once// Copyright 2018 Rodionov Fedor
+// Copyright 2018 Rodionov Fedor
 
 #include <gtest/gtest.h>
 

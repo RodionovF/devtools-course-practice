@@ -18,7 +18,7 @@ TEST(HypothecCalculator, Can_set_day_and_check_return_day) {
     H.set_date_of_payment(data);
 
     // Assert
-    EXPECT_EQ(H.return_final_date_of_payment().day, (data.day + 180) % 30 );
+    EXPECT_EQ(H.return_final_date_of_payment().day, (data.day + 180) % 30);
 }
 
 TEST(HypothecCalculator, Can_set_month_and_check_return_month) {
@@ -99,10 +99,10 @@ TEST(HypothecCalculator, Cannt_create_object_with_minus_value) {
     int value4 = -25;
 
     // Act & Assert
-    ASSERT_ANY_THROW(HypothecCalculator H(value1, value2, value4, value3);
+    ASSERT_ANY_THROW(HypothecCalculator H(value1, value2, value4, value3));
 }
 
-TEST(HypothecCalculator, Cannt_set_last year) {
+TEST(HypothecCalculator, Cannt_set_last_year) {
     // Arrange
     HypothecCalculator H;
     date data;

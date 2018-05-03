@@ -1,13 +1,6 @@
 // Copyright 2018 Rodionov Fedor
 #include "include/hypothec_calculator.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <string.h>
-#include <string>
-#include <sstream>
-
 HypothecCalculator::HypothecCalculator() {
     apartments_cost = 1000;
     an_initial_fee = 0;

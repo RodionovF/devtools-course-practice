@@ -1,5 +1,6 @@
 // Copyright 2018 Rodionov Fedor
 #include "include/hypothec_calculator.h"
+#include <string>
 
 HypothecCalculator::HypothecCalculator() {
     apartments_cost = 1000;
